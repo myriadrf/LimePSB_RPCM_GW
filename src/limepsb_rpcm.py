@@ -10,6 +10,7 @@
 #
 
 import os
+import sys
 import argparse
 
 from migen import *
@@ -31,7 +32,9 @@ from litex.soc.cores.spi import SPIMaster
 from limepsb_rpcm_platform import Platform
 
 from hdl.gpsdocfg.src.gpsdocfg import GPSDOCFG
-from hdl.ppsdo.ppsdo           import PPSDO
+
+sys.path.append("../../LimePPSDO/src/") # FIXME.
+from ppsdo import PPSDO
 
 # CRG ----------------------------------------------------------------------------------------------
 
