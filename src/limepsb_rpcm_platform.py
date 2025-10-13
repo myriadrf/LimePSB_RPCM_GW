@@ -12,6 +12,7 @@ from litex.build.generic_platform import *
 from litex.build.lattice import LatticeiCE40Platform
 
 # IOs ----------------------------------------------------------------------------------------------
+
 io = [
     # Clks.
     # -----
@@ -118,7 +119,8 @@ io = [
     ("en_cm5_usb3", 0, Pins( "4"), IOStandard("LVCMOS33")),
 ]
 
-# Platform --------------------------------------------------------------------------------------
+# Platform -----------------------------------------------------------------------------------------
+
 class Platform(LatticeiCE40Platform):
     default_clk_name   = "lmk10_clk_out0"
     default_clk_period = 1e9/10e9

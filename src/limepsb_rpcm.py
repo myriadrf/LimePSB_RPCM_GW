@@ -33,8 +33,8 @@ from limepsb_rpcm_platform import Platform
 
 from hdl.gpsdocfg.src.gpsdocfg import GPSDOCFG
 
-sys.path.append("../../LimePPSDO/src/") # FIXME.
-from ppsdo import PPSDO
+sys.path.append("../LimePPSDO/src") # FIXME.
+from ppsdo import PPSDO             # FIXME.
 
 # CRG ----------------------------------------------------------------------------------------------
 
@@ -96,7 +96,7 @@ class BaseSoC(SoCMini):
         # Signals ----------------------------------------------------------------------------------
 
         # PPS.
-        pps              = Signal()
+        pps = Signal()
 
         # Rpi.
         rpi_sync_pads_i  = Signal()
@@ -104,24 +104,24 @@ class BaseSoC(SoCMini):
         # Pads -------------------------------------------------------------------------------------
 
         # HW/BOM.
-        version_pads       = platform.request("version")
+        version_pads = platform.request("version")
 
         # PCIe.
-        pcie_uim_pad       = platform.request("pcie_uim")
+        pcie_uim_pad = platform.request("pcie_uim")
 
         # GNSS.
-        gnss_pads          = platform.request("gnss")
+        gnss_pads = platform.request("gnss")
 
         # UART.
-        uart_pads          = platform.request("uart")
+        uart_pads = platform.request("uart")
 
         # SPI DAC.
-        spi_dac_pads       = Record([("clk", 1), ("cs_n", 1), ("mosi", 1)])
+        spi_dac_pads = Record([("clk", 1), ("cs_n", 1), ("mosi", 1)])
 
         # Rpi.
-        rpi_uart0_pads     = platform.request("rpi_uart0")
-        rpi_spi1_pads      = platform.request("rpi_spi1")
-        rpi_sync_pads      = platform.request("rpi_sync")
+        rpi_uart0_pads = platform.request("rpi_uart0")
+        rpi_spi1_pads  = platform.request("rpi_spi1")
+        rpi_sync_pads  = platform.request("rpi_sync")
 
         # FPGA.
         fpga_led_r         = platform.request("fpga_led_r")
