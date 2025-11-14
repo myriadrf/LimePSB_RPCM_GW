@@ -13,6 +13,8 @@ import os
 import sys
 import argparse
 
+sys.path.append("../")
+
 from migen import *
 from migen.genlib.cdc       import MultiReg
 from migen.genlib.resetsync import AsyncResetSynchronizer
@@ -33,8 +35,7 @@ from limepsb_rpcm_platform import Platform
 
 from hdl.gpsdocfg.src.gpsdocfg import GPSDOCFG
 
-sys.path.append("../LimePPSDO/src") # FIXME.
-from ppsdo import PPSDO             # FIXME.
+from gateware.LimePPSDO.src.ppsdo import PPSDO
 
 # CRG ----------------------------------------------------------------------------------------------
 
