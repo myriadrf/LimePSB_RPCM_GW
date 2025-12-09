@@ -40,8 +40,7 @@ Refer to the gpsdocfg register descriptions in :ref:`module-gpsdocfg` for detail
 
 .. _fig-block:
 
-.. figure:: images/block_diagram.png
-  :width: 600
+.. figure:: images/block_diagram.drawio.svg
   :align: center
   
   GPSDO implementation block diagram
@@ -63,7 +62,6 @@ Basic write sequence can be found in :numref:`fig-spi-write` and read sequence i
 .. _fig-spi-write:
 
 .. figure:: images/spi_write.png
-  :width: 600
   :align: center
 
   SPI write sequence  
@@ -71,7 +69,6 @@ Basic write sequence can be found in :numref:`fig-spi-write` and read sequence i
 .. _fig-spi-read:
 
 .. figure:: images/spi_read.png
-  :width: 600
   :align: center
 
   SPI read sequence  
@@ -192,15 +189,32 @@ This chapter provides a short guide on how to use the GPSDO implementation in Li
 
   Example register values calculated for 30.72MHz VCTCXO clock and 20 ppb error tolerance:
 
-  | 0x0001 = 0xC000
-  | 0x0002 = 0x01D4
-  | 0x0003 = 0x0001
-  | 0x0004 = 0x8000
-  | 0x0005 = 0x124F
-  | 0x0006 = 0x0006
-  | 0x0007 = 0x0000
-  | 0x0008 = 0xB71B
-  | 0x0009 = 0x003D
+.. _tab-gps-reg_ex:
+
+  .. table:: Example gpsdocfg register values
+
+    +--------------+------------+
+    | Reg. Address | Reg. Value |
+    +==============+============+
+    | 0x0001       | 0xC000     |
+    +--------------+------------+
+    | 0x0002       | 0x01D4     |
+    +--------------+------------+
+    | 0x0003       | 0x0001     |
+    +--------------+------------+
+    | 0x0004       | 0x8000     |
+    +--------------+------------+
+    | 0x0005       | 0x124F     |
+    +--------------+------------+
+    | 0x0006       | 0x0006     |
+    +--------------+------------+
+    | 0x0007       | 0x0000     |
+    +--------------+------------+
+    | 0x0008       | 0xB71B     |
+    +--------------+------------+
+    | 0x0009       | 0x003D     |
+    +--------------+------------+
+
 
 3.	Enable VCTCXO tamer module by setting **0x0000[0]** register bit to 1.
 4.	LED7 should start blinking in red color once per second, this indicates that there is active 1PPS signal and VCTCXO TAMER module is enabled. 
